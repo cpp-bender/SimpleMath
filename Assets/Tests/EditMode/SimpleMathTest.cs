@@ -1,0 +1,29 @@
+using NUnit.Framework;
+using UnityEngine;
+
+public class SimpleMathTest
+{
+    [Test]
+    public void Lerp()
+    {
+        Assert.AreEqual(SimpleMath.Lerp(0, 1, .5f), .1f);
+    }
+
+    [Test]
+    public void InverseLerp()
+    {
+        Assert.AreEqual(SimpleMath.InvLerp(0, 1, 5), 3);
+    }
+
+    [Test]
+    public void ClampVector3()
+    {
+        Assert.AreEqual(SimpleMath.ClampVector(Vector3.one, VectorComponent.X, 5f), new Vector3(5f, 1f, 1f));
+    }
+
+    [Test]
+    public void Tau()
+    {
+        Assert.AreEqual(SimpleMath.TAU, 2 * Mathf.PI);
+    }
+}
